@@ -1,0 +1,21 @@
+### GET /hello
+GET http://localhost:3000/hello
+
+### GET /user (query)
+GET http://localhost:3000/user?firstname=John&lastname=Doe
+
+### POST /user/:firstname/:lastname
+POST http://localhost:3000/user/John/Doe
+
+### POST /users (body array)
+POST http://localhost:3000/users
+Content-Type: application/json
+
+[
+  { "firstname": "Pritesh", "lastname": "Patel" },
+  { "firstname": "John", "lastname": "Doe" },
+  { "firstname": "John", "lastname": "Rome" }
+]
+
+### GET /instruction.html
+GET http://localhost:3000/instruction.html

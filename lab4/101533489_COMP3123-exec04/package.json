@@ -1,0 +1,23 @@
+{
+  "name": "101533489_COMP3123-exec04",
+  "version": "1.0.0",
+  "description": "Express JS app for COMP3123 exec04",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "express",
+    "comp3123",
+    "exec04"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}

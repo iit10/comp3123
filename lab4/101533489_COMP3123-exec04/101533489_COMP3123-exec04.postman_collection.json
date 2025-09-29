@@ -1,0 +1,121 @@
+{
+  "info": {
+    "name": "101533489_COMP3123-exec04 API",
+    "_postman_id": "b0f4e1c1-9f1a-4d77-9f6e-3123abcd0001",
+    "description": "Requests for COMP3123 exec04 endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET /hello",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/hello",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "hello"
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET /user (query)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/user?firstname=John&lastname=Doe",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "user"
+          ],
+          "query": [
+            {
+              "key": "firstname",
+              "value": "John"
+            },
+            {
+              "key": "lastname",
+              "value": "Doe"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "POST /user/:firstname/:lastname",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/user/John/Doe",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "user",
+            "John",
+            "Doe"
+          ]
+        }
+      }
+    },
+    {
+      "name": "POST /users (body array)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "[\n  {\n    \"firstname\": \"Pritesh\",\n    \"lastname\": \"Patel\"\n  },\n  {\n    \"firstname\": \"John\",\n    \"lastname\": \"Doe\"\n  },\n  {\n    \"firstname\": \"John\",\n    \"lastname\": \"Rome\"\n  }\n]"
+        },
+        "url": {
+          "raw": "http://localhost:3000/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "users"
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET /instruction.html",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/instruction.html",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "instruction.html"
+          ]
+        }
+      }
+    }
+  ]
+}
