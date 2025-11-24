@@ -1,4 +1,9 @@
-# React Redux JWT Demo Application
+# Exercise 10: React Redux JWT Demo Application
+
+**COMP3123 - Full Stack Development**  
+**Student**: [Your Name]  
+**Student ID**: [Your Student ID]  
+**Exercise**: Self Directed Research and Innovation Exercise
 
 A comprehensive demonstration of **React Redux** and **JWT (JSON Web Token)** concepts, built as an educational project showcasing modern state management and authentication patterns.
 
