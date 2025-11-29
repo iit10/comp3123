@@ -3,11 +3,12 @@
 A full-stack employee management system built with **Node.js**, **Express**, **MongoDB**, **React**, and **Material-UI**.
 
 ## 👤 Student Information
-- **Student ID**: [YOUR_STUDENT_ID]
-- **Name**: [YOUR_NAME]
+- **Student ID**: 101533489
+- **Name**: Omar Romero Garcia
 - **Course**: COMP3123 - Full Stack Development
 - **Assignment**: Assignment 2
 - **Semester**: Fall 2024
+- **GitHub Repository**: <REPLACE_WITH_REPO_URL>
 
 ## 🎯 Project Overview
 
@@ -38,53 +39,35 @@ This is a comprehensive employee management system that allows organizations to:
 - **Form Validation** with real-time feedback
 - **Responsive Design** for all screen sizes
 
-## 📁 Project Structure
+## 📁 Repository Structure
 
 ```
 comp3123_assignment2/
-├── backend/                    # Node.js Backend
-│   ├── models/                 # MongoDB Models
-│   │   ├── User.js            # User model with authentication
-│   │   └── Employee.js        # Employee model with validation
-│   ├── routes/                # API Routes
-│   │   ├── auth.js           # Authentication endpoints
-│   │   └── employees.js      # Employee CRUD endpoints
-│   ├── middleware/           # Custom middleware
-│   │   ├── auth.js          # JWT authentication middleware
-│   │   └── upload.js        # File upload middleware
-│   ├── uploads/             # Profile picture storage
-│   ├── .env                 # Environment variables
-│   ├── server.js           # Main server file
-│   ├── package.json        # Dependencies
-│   └── Dockerfile          # Docker configuration
+├── backend/                    # Node.js Backend Server
+│   ├── models/                 # MongoDB Data Models
+│   ├── routes/                # API Route Handlers
+│   ├── middleware/            # Custom Middleware
+│   ├── uploads/               # File Upload Directory
+│   ├── server.js              # Main Server Entry Point
+│   ├── package.json           # Backend Dependencies
+│   └── Dockerfile             # Backend Container Config
 │
-├── frontend/                  # React Frontend
-│   ├── public/               # Static files
-│   ├── src/
-│   │   ├── api/             # API integration
-│   │   │   └── api.js       # Axios configuration
-│   │   ├── components/      # Reusable components
-│   │   │   ├── ProtectedRoute.js
-│   │   │   └── Navbar.js
-│   │   ├── context/         # React Context
-│   │   │   └── AuthContext.js
-│   │   ├── pages/           # Page components
-│   │   │   ├── LoginPage.js
-│   │   │   ├── SignupPage.js
-│   │   │   ├── EmployeeListPage.js
-│   │   │   ├── AddEmployeePage.js
-│   │   │   ├── ViewEmployeePage.js
-│   │   │   ├── UpdateEmployeePage.js
-│   │   │   └── SearchEmployeePage.js
-│   │   ├── App.js           # Main App component
-│   │   └── index.js         # Entry point
-│   ├── package.json         # Dependencies
-│   ├── Dockerfile          # Docker configuration
-│   └── nginx.conf          # Nginx configuration
+├── frontend/                  # React Frontend Application
+│   ├── src/                   # Source Code
+│   │   ├── api/              # API Integration Layer
+│   │   ├── components/       # Reusable Components
+│   │   ├── context/          # React Context Providers
+│   │   ├── pages/            # Page Components
+│   │   └── App.js            # Main App Component
+│   ├── public/               # Static Assets
+│   ├── package.json          # Frontend Dependencies
+│   └── Dockerfile            # Frontend Container Config
 │
-├── docker-compose.yml        # Multi-container setup
-├── mongo-init.js            # Database initialization
-└── README.md               # Project documentation
+├── screenshots/              # Application Screenshots
+├── docker-compose.yml        # Multi-Container Setup
+├── mongo-init.js            # Database Initialization
+├── .gitignore               # Git Ignore Rules
+└── README.md                # Project Documentation
 ```
 
 ## 🔌 API Endpoints
@@ -114,80 +97,71 @@ GET    /api/employees/search       - Search employees by department/position
 - **Node.js** (v16 or higher)
 - **MongoDB** (v4.4 or higher)
 - **Git**
-- **Docker** (optional, for containerized deployment)
+- **Docker** (recommended for containerized deployment)
 
-### Option 1: Local Development Setup
+## 🔧 How to Run Backend
 
-#### 1. Clone the Repository
+### Local Development
 ```bash
-git clone <your-repository-url>
-cd comp3123_assignment2
-```
-
-#### 2. Setup Backend
-```bash
-# Navigate to backend folder
+# Navigate to backend directory
 cd backend
 
 # Install dependencies
 npm install
 
-# Create environment file
-cp .env.example .env
-# Edit .env with your configurations
+# Create and configure .env file
+# Set MONGODB_URI, JWT_SECRET, etc.
 
-# Start MongoDB locally (if not using Docker)
-# Make sure MongoDB is running on localhost:27017
+# Start MongoDB service locally
+# Ensure MongoDB is running on localhost:27017
 
-# Start the backend server
+# Start backend server
 npm run dev
 ```
 
-#### 3. Setup Frontend
+Backend will be available at: **http://localhost:5000**
+
+## 💻 How to Run Frontend
+
+### Local Development
 ```bash
-# Open new terminal and navigate to frontend folder
+# Navigate to frontend directory
 cd frontend
 
 # Install dependencies
 npm install
 
-# Start the React development server
+# Start React development server
 npm start
 ```
 
-The application will be available at:
-- **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:5000
-- **API Health Check**: http://localhost:5000/api/health
+Frontend will be available at: **http://localhost:3000**
 
-### Option 2: Docker Deployment (Recommended)
+## 🐳 How to Run with Docker
 
-#### 1. Using Docker Compose
+### Using Docker Compose (Recommended)
 ```bash
-# Clone and navigate to project
-git clone <your-repository-url>
+# Clone repository
+git clone https://github.com/Shoaibxaif/COMP3123-assignment2.git
 cd comp3123_assignment2
 
 # Build and start all services
 docker-compose up --build
 
-# Or run in detached mode
+# Run in detached mode (background)
 docker-compose up -d --build
-```
 
-#### 2. Access the Application
-- **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:5000
-- **MongoDB**: localhost:27017
-
-#### 3. Stop the Application
-```bash
 # Stop all services
 docker-compose down
 
-# Stop and remove volumes (clears database)
+# Stop and remove data (full cleanup)
 docker-compose down -v
 ```
+
+### Access Points:
+- **Frontend**: http://localhost:3000
+- **Backend API**: http://localhost:5000
+- **API Health Check**: http://localhost:5000/api/health
 
 ## 👨‍💼 Default Login Credentials
 
@@ -279,40 +253,25 @@ REACT_APP_API_URL=http://localhost:5000/api
 3. Test with network disconnected
 4. Verify error messages are user-friendly
 
-## 📸 Screenshots Needed
-
-**👉 TO DO BY YOU**: Take screenshots of the following screens and add them to the README:
-
-1. **Login Page** - Show the login form
-2. **Signup Page** - Show the registration form
-3. **Employee List** - Show the data grid with employees
-4. **Add Employee** - Show the comprehensive form
-5. **View Employee** - Show employee details page
-6. **Edit Employee** - Show the update form
-7. **Search Page** - Show search filters and results
-8. **Mobile View** - Show responsive design on mobile
-
-```markdown
 ## 📸 Application Screenshots
 
 ### Login Page
-![Login Page](screenshots/login-page.png)
+![Login Page](screenshots/Screenshot%202025-11-28%20171036.png)
 
 ### Employee Dashboard
-![Employee List](screenshots/employee-list.png)
+![Employee List](screenshots/Screenshot%202025-11-28%20183301.png)
 
 ### Add Employee Form
-![Add Employee](screenshots/add-employee.png)
+![Add Employee](screenshots/Screenshot%202025-11-28%20183315.png)
 
 ### Employee Profile
-![View Employee](screenshots/view-employee.png)
+![View Employee](screenshots/Screenshot%202025-11-28%20183340.png)
 
 ### Search Functionality
-![Search Page](screenshots/search-page.png)
+![Search Page](screenshots/Screenshot%202025-11-28%20183355.png)
 
 ### Mobile Responsive
-![Mobile View](screenshots/mobile-view.png)
-```
+![Mobile View](screenshots/Screenshot%202025-11-28%20183453.png)
 
 ## 🚀 Deployment Options
 
@@ -404,47 +363,8 @@ This is an academic project for COMP3123. No external contributions are accepted
 
 This project is created for educational purposes as part of COMP3123 course requirements.
 
-## 👨‍💻 Student Submission
-
-**👉 TO DO BY YOU**: Before submitting, ensure:
-
-1. ✅ All code is working and tested
-2. ✅ Screenshots are added to README
-3. ✅ Repository is pushed to GitHub
-4. ✅ Application is deployed (optional)
-5. ✅ Video demonstration is recorded
-6. ✅ All assignment requirements are met
-
-### Submission Checklist
-
-- [ ] Backend API working with all endpoints
-- [ ] Frontend React app working with all pages
-- [ ] Authentication system functional
-- [ ] Employee CRUD operations working
-- [ ] File upload working
-- [ ] Search functionality working
-- [ ] Docker setup working
-- [ ] README.md complete with screenshots
-- [ ] Code pushed to GitHub repository
-- [ ] Application deployed (optional)
-- [ ] Video demonstration recorded
-
 ---
 
-## 🎥 Video Demonstration
-
-**👉 TO DO BY YOU**: Record a video demonstration showing:
-
-1. Application overview and navigation
-2. User registration and login
-3. Adding a new employee with profile picture
-4. Viewing employee details
-5. Editing employee information
-6. Searching employees by department/position
-7. Deleting an employee
-8. Responsive design on different screen sizes
-
----
-
-**Built with ❤️ for COMP3123 - Full Stack Development**#   C O M P 3 1 2 3 - a s s i g n m e n t 2  
+**Built with ❤️ for COMP3123 - Full Stack Development**#   C O M P 3 1 2 3 - a s s i g n m e n t 2 
+ 
  
