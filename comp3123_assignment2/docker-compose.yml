@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:6.0
+    container_name: employee_management_db
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: Admin123!
+      MONGO_INITDB_DATABASE: employee_management
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    networks:
+      - employee_network
+
+  # Backend API
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: employee_management_backend
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+      MONGODB_URI: mongodb://admin:Admin123!@mongodb:27017/employee_management?authSource=admin
+      JWT_SECRET: your_super_secret_jwt_key_comp3123_2024_production
+      JWT_EXPIRES_IN: 24h
+      MAX_FILE_SIZE: 5242880
+      UPLOAD_PATH: ./uploads/
+      FRONTEND_URL: http://localhost:3000
+    ports:
+      - "5000:5000"
+    volumes:
+      - backend_uploads:/app/uploads
+    depends_on:
+      - mongodb
+    networks:
+      - employee_network
+
+  # Frontend React App
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: employee_management_frontend
+    restart: unless-stopped
+    environment:
+      REACT_APP_API_URL: http://localhost:5000/api
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - employee_network
+
+volumes:
+  mongodb_data:
+    driver: local
+  backend_uploads:
+    driver: local
+
+networks:
+  employee_network:
+    driver: bridge
