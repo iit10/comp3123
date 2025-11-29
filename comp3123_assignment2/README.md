@@ -256,22 +256,48 @@ REACT_APP_API_URL=http://localhost:5000/api
 ## 📸 Application Screenshots
 
 ### Login Page
-![Login Page](screenshots/Screenshot%202025-11-28%20171036.png)
+![Login Page](screenshots/01-login-page.png)
 
 ### Employee Dashboard
-![Employee List](screenshots/Screenshot%202025-11-28%20183301.png)
+![Employee List](screenshots/02-employee-dashboard.png)
 
 ### Add Employee Form
-![Add Employee](screenshots/Screenshot%202025-11-28%20183315.png)
+![Add Employee](screenshots/03-add-employee-form.png)
 
 ### Employee Profile
-![View Employee](screenshots/Screenshot%202025-11-28%20183340.png)
+![View Employee](screenshots/04-employee-profile.png)
 
 ### Search Functionality
-![Search Page](screenshots/Screenshot%202025-11-28%20183355.png)
+![Search Page](screenshots/05-search-functionality.png)
 
 ### Mobile Responsive
-![Mobile View](screenshots/Screenshot%202025-11-28%20183453.png)
+![Mobile View](screenshots/06-mobile-responsive.png)
+
+### Additional Screenshots
+
+#### User Registration
+![Signup Page](screenshots/07-signup-registration.png)
+
+#### Edit Employee Form
+![Edit Employee](screenshots/08-edit-employee-form.png)
+
+#### Form Validation
+![Form Validation](screenshots/09-form-validation-errors.png)
+
+#### Delete Confirmation
+![Delete Confirmation](screenshots/10-delete-confirmation.png)
+
+#### Loading States
+![Loading States](screenshots/11-loading-states.png)
+
+#### Navigation Menu
+![Navigation Menu](screenshots/12-navigation-menu.png)
+
+#### Success Notifications
+![Success Notifications](screenshots/13-success-notifications.png)
+
+#### File Upload Feature
+![File Upload](screenshots/14-file-upload-feature.png)
 
 ## 🚀 Deployment Options
 
